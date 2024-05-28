@@ -16,12 +16,12 @@ xPathScrapers:
                 with: ""
           - parseDate: "02.01.2006"
       Details:
-        selector: //div[contains(@class,"video-info-details")]//p
+        selector: //div[contains(@class,"video-info-details__description")]/details/p
         concat: " "
       Performers:
-        Name: //div[contains(@class, "categories")]/a[contains(@href, "pornstars")]
+        Name: //div[contains(@class, "video-info-details__categories related-tags-container_closed")]/a[(contains(@href, "pornstars") or contains(@href, "models"))]
       Tags:
-        Name: //div[contains(@class, "categories")]/a[not (contains(@href, "pornstars") or contains(@href, "studios"))]
+        Name: //div[contains(@class, "video-info-details__categories related-tags-container_closed")]/a[not(contains(@href, "pornstars") or contains(@href, "models") or contains(@href, "studios") or contains(@href, "hidden"))]
       Studio:
         Name: //a[contains(@class, "studio-link")]
       Image: //meta[@property="og:image"]/@content
